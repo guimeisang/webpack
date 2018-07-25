@@ -1,3 +1,5 @@
+## 了解一波基础
+
 ### 先理解下什么是模块化，CommonJS、AMD/CMD、ES6 Modules
 > [我觉得是讲的最为清楚的文档](https://github.com/muwoo/blogs/issues/28)
 
@@ -35,5 +37,54 @@
 ### ES6 模块与 CommonJS 模块的差异
 - CommonJS 模块输出的是一个对象（运行后的值）、ES6 模块输出的是代码引用；
 - CommonJS 模块是运行时加载，ES6 模块是编译时输出接口。
+
+
+### 总之
+- es6 modules 是一个编译时就会确定模块依赖关系的方式
+- CommonJS的模块规范中，Node 在对 JS 文件进行编译的过程中，会对文件中的内容进行头尾包装，在头部添加(function (export, require, modules, __filename, __dirname){\n 在尾部添加了\n};。这样我们在单个JS文件内部可以使用这些参数
+
+
+## AST基础知识
+> 抽象语法树  
+
+![js源代码抽象语法结构的树状表现形式](https://pic2.zhimg.com/80/v2-d67bace15cbbf7dd0bfd539d478e3bed_hd.jpg)
+
+## 正文
+
+> 转换前：
+
+```js
+// index.js
+import a from './test'
+console.log(a)
+
+// test.js
+import b from './message'
+const a = 'hello' + b
+export default a
+
+// message.js
+const b = 'world'
+export default b
+```
+
+> 转换后
+
+```js
+(function(modules){
+    // ...
+})({
+    // ...
+})
+```
+这是一个自执行函数，执行的时候不断的往底层去找文件，然后再一级一级的返回到根文件 index.js
+
+> 其他
+- [Babylon和babel-traverse详解](https://github.com/xtx1130/blog/issues/7)
+
+
+
+
+
 
 
