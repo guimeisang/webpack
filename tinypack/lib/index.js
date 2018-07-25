@@ -6,7 +6,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const babtlon = require('babylon');
+const babylon = require('babylon');
 const traverse = require('babel-traverse').default;
 const { transformFromAst } = require('babel-core');
 
@@ -52,7 +52,7 @@ function getTranslateCode(ast){
  */ 
 function parse(fileName, entry){
     let filePath = fileName.indexOf('.js') === -1 ? fileName + '.js' : fileName;
-    let dirName = entity ? '' : path.dirname(config.entry)
+    let dirName = entry ? '' : path.dirname(config.entry)
     let absolutePath = path.join(dirName, filePath);
     const ast = getAst(absolutePath);
     return {

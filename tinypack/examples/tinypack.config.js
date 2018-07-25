@@ -1,5 +1,5 @@
 
 module.exports = {
-    entry: './src/index.js',
-    output: './dist/index.js'
+    entry: '../examples/src/index.js',
+    output: '../examples/dist/index.js'
   }

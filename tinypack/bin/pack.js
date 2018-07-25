@@ -7,7 +7,7 @@ var ora = require('ora')
 var projectPath = process.cwd()
 var bundleFile = require('../lib/index')
 
-var configPath = path.join(projectPath, 'tinypack.config.js')
+var configPath = path.join(projectPath, '../examples/tinypack.config.js')
 
 function init() {
   var spinner = ora('正在打包配置文件...')
