@@ -81,6 +81,10 @@ export default b
 
 > 其他
 - [Babylon和babel-traverse详解](https://github.com/xtx1130/blog/issues/7)
+    - Babylon 是将js解析成AST的工具；产生json
+    - babel-traverse 来进行筛选遍历节点；
+- [Babel总览](http://www.alloyteam.com/2017/04/analysis-of-babel-babel-overview/)
+    - 
 
 
 
