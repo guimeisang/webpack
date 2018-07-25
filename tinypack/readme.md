@@ -87,6 +87,29 @@ export default b
     - 
 
 
+## 开始开发一个简单的tinypack
+
+> 我们需要做什么？在做一个基础的打包编译工具的时候
+    1. 将es6转成es5；  -- 可以用babel来做，第一步是用babylon生成AST，通过babel-core 将AST重新生成源码；
+    2. 处理模块化加载依赖； -- 依赖关系可以用babel-traverse 提供一个遍历AST视图并做处理的功能，通过`ImportDeclaration`可以得到依赖属性
+    3. 生成一个可以在浏览器加载执行的js文件；
+
+
+### usage
+
+```js
+npm i
+
+npm i tinypack_demo@1.0.7 -g
+
+cd examples
+
+tinypack
+```
+
+
+
+
 
 
 
